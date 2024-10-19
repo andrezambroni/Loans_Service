@@ -1,21 +1,27 @@
 import http from "http"
-import { LoanOptions } from "./services/loanService.js"
-import validateCustomerData from "./middlewares/validationMiddleware.js"
+import { loanRoutes } from "./routes/loanRoutes.js"
 
 const server = http.createServer((req, res) => {
-  if (req.method === "POST" && req.url === "/customer-loans") {
-    let body = ""
-    req.on("data", (chunk) => {
-      body += chunk.toString()
-    })
-    req.on("end", () => {
-      req.body = JSON.parse(body)
-      validateCustomerData(req, res, () => {
-        const response = LoanOptions(req.body)
-        res.writeHead(200, { "Content-Type": "application/json" })
-        res.end(JSON.stringify(response))
-      })
-    })
+  const route = loanRoutes.find(
+    (r) =>
+      r.method === req.method &&
+      new RegExp(`^${r.path.replace(/:\w+/g, "\\w+")}$`).test(req.url)
+  )
+
+  if (route) {
+    const match = req.url.match(
+      new RegExp(`^${route.path.replace(/:\w+/g, "(\\w+)")}$`)
+    )
+    if (match) {
+      req.params = {}
+      const paramNames = route.path.match(/:(\w+)/g)
+      if (paramNames) {
+        paramNames.forEach((name, index) => {
+          req.params[name.substring(1)] = match[index + 1]
+        })
+      }
+    }
+    route.controller(req, res)
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" })
     res.end("Not Found")
