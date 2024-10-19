@@ -1,0 +1,39 @@
+{
+  "loans": [
+    {
+      "age": 28,
+      "income": 4000,
+      "location": "SP",
+      "name": "Cliente B",
+      "id": 1729363910196
+    },
+    {
+      "age": 30,
+      "income": 20000,
+      "location": "SP",
+      "name": "AZ",
+      "id": 1729364270653
+    },
+    {
+      "age": 32,
+      "income": 15500,
+      "location": "SP",
+      "name": "ZA",
+      "id": 1729366156340
+    },
+    {
+      "age": 40,
+      "income": 30500,
+      "location": "SP",
+      "name": "D",
+      "id": 1729366477026
+    },
+    {
+      "age": 20,
+      "income": 2500,
+      "location": "SP",
+      "name": "E",
+      "id": 1729367097873
+    }
+  ]
+}
