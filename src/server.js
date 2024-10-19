@@ -1,5 +1,4 @@
-import http from "node:http"
-
+import http from "http"
 import { reqLoan } from "./services/loanService.js"
 
 const server = http.createServer((req, res) => {
