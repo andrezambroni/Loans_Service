@@ -1,7 +1,7 @@
-const { reqLoan } = require("../services/loanService")
+const { LoanOptions } = require("../services/loanService")
 
 test("Cliente com salário inferior a R$ 3000", () => {
-  const result = reqLoan({
+  const result = LoanOptions({
     age: 25,
     income: 2500,
     location: "SP",
@@ -17,7 +17,7 @@ test("Cliente com salário inferior a R$ 3000", () => {
 })
 
 test("Cliente com salário entre R$ 3000 e R$ 5000, idade menor que 30 e localização SP", () => {
-  const result = reqLoan({
+  const result = LoanOptions({
     age: 28,
     income: 4000,
     location: "SP",
@@ -33,7 +33,7 @@ test("Cliente com salário entre R$ 3000 e R$ 5000, idade menor que 30 e localiz
 })
 
 test("Cliente com salário igual ou superior a R$ 5000", () => {
-  const result = reqLoan({
+  const result = LoanOptions({
     age: 35,
     income: 6000,
     location: "RJ",
@@ -46,7 +46,7 @@ test("Cliente com salário igual ou superior a R$ 5000", () => {
 })
 
 test("Cliente com dados incompletos", () => {
-  const result = reqLoan({ age: 35, income: 6000, location: "RJ" })
+  const result = LoanOptions({ age: 35, income: 6000, location: "RJ" })
   expect(result).toEqual({
     error: "Idade, salário, localização e nome são obrigatórios.",
   })

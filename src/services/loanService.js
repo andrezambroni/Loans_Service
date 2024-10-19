@@ -1,4 +1,4 @@
-export function reqLoan({ age, income, location, name }) {
+export function LoanOptions({ age, income, location, name }) {
   if (
     age === undefined ||
     income === undefined ||
