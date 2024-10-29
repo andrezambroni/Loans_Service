@@ -9,14 +9,10 @@
 
 <p align="border">
 <h2 id="sobre">❔Sobre o projeto </h2>
- Objetivo do projeto❔  </br>
-Loans_Service é um serviço de API para gerenciar empréstimos. Ele permite criar, atualizar, deletar e consultar registros de empréstimos.
 
-<br> Com o que foi construído❔  </br>
-Construído com Node.js e Express.
-
-<br>Por que fiz esse projeto❔ </br>
-Para facilitar o gerenciamento de empréstimos de clientes.
+- Loans_Service é um serviço de API para gerenciar empréstimos. Ele permite criar, atualizar, deletar e consultar registros de empréstimos.
+- Construído com Node.js e Express.
+- Para facilitar o gerenciamento de empréstimos de clientes.
 </p>
 
 <h2 id="started">🚀 Como executar</h2>
@@ -100,8 +96,7 @@ Sucesso (HTTP 201):
 
 Endpoint: /loans/:id   
 Método: PUT   
-Descrição:
-Este endpoint atualiza um registro de empréstimo existente.
+Descrição: Este endpoint atualiza um registro de empréstimo existente.
 
 Parâmetros de Entrada:
 id (number): ID do empréstimo.   
@@ -127,13 +122,14 @@ Erro (HTTP 404):
 {
   "error": "Loan not found"
 }
-Endpoint: /loans/:id
-Método: PATCH
-Descrição: Este endpoint atualiza parcialmente um registro de empréstimo existente.
+```
+Endpoint: /loans/:id   
+Método: PATCH   
+Descrição: Este endpoint atualiza parcialmente um registro de empréstimo existente.   
 
-Parâmetros de Entrada: id (number): ID do empréstimo.
-Campos parciais a serem atualizados (por exemplo, interest_rate).
-Possíveis Retornos:
+Parâmetros de Entrada: id (number): ID do empréstimo.   
+Campos parciais a serem atualizados (por exemplo, interest_rate).   
+Possíveis Retornos:   
 
 ```json
 Sucesso (HTTP 200):
@@ -144,25 +140,27 @@ Sucesso (HTTP 200):
   "amount": 10000,
   "duration": 12
 }
-
+```
+```json
 Erro (HTTP 404):
-
 
 {
   "error": "Loan not found"
 }
 ```
+
 Endpoint: /loans/:id   
 Método: DELETE   
 Descrição: Este endpoint deleta um registro de empréstimo existente.
 
-Parâmetros de Entrada: id (number): ID do empréstimo.
-Possíveis Retornos: Sucesso (HTTP 200):
+Parâmetros de Entrada: id (number): ID do empréstimo.   
+Possíveis Retornos: Sucesso (HTTP 200):   
 ```json
 {
   "message": "Loan deleted"
 }
-
+```
+```json
 Erro (HTTP 404):
 {
   "error": "Loan not found"
@@ -170,10 +168,10 @@ Erro (HTTP 404):
 ```
 Endpoint: /loans/:id   
 Método: GET   
-Descrição: Este endpoint retorna um registro de empréstimo existente.
+Descrição: Este endpoint retorna um registro de empréstimo existente.   
 
-Parâmetros de Entrada: id (number): ID do empréstimo.
-Possíveis Retornos: Sucesso (HTTP 200):
+Parâmetros de Entrada: id (number): ID do empréstimo.   
+Possíveis Retornos: Sucesso (HTTP 200):   
 ```json
 {
   "id": 123456789,
@@ -182,7 +180,8 @@ Possíveis Retornos: Sucesso (HTTP 200):
   "amount": 10000,
   "duration": 12
 }
-
+```
+```json
 Erro (HTTP 404):
 {
   "error": "Loan not found"
@@ -191,7 +190,7 @@ Erro (HTTP 404):
 
 Endpoint: /loans   
 Método: GET   
-Descrição: Este endpoint retorna todos os registros de empréstimo.
+Descrição: Este endpoint retorna todos os registros de empréstimo.   
 
 Possíveis Retornos: Sucesso (HTTP 200):
 ```json
